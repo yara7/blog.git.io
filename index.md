@@ -1,37 +1,36 @@
-## Welcome to GitHub Pages
+**Diabetes prediction**   
+**Introduction**    
+Diabetes is considered as one of the deadliest and chronic diseases. Our project aims to predict diabetes based on many factors(features), like: age, family history, blood pressure, ... etc. You can check and download our dataset . [here](https://www.kaggle.com/edubrq/diabetes).      .
 
-You can use the [editor on GitHub](https://github.com/yara7/blog.git.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+**Data Analysis**           
+By looking into our dataset, we found that we have some missing data, so we solved this by replacing these missing values in each    
+attribute with the mean value of the data of this attribute      
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+|      | Pregnancies | Glucose | Blood pressure | Skin Thickness | Insuline | BMI |	Diabetes Pedigree Function |	Age
+|------------ | ------------- | ---------- | --------- | ------------ | --------- | -------- |  
+mean | 13.38 | 	121.86 | 	72.75 | 	26.6 | 	118.66 | 	32.45 | 	0.74 | 	33.24 |     
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
+**Methods**     
+When model is divided into train and validation, it means that the training part wasn't considered in the validation part, and similarly the validation part wasn't considered in the training part. That's why we used the cross-validation, so that the whole data will be considered in both training and validation. See following diagram show more explanation.[Source](https://www.kaggle.com/shrutimechlearn/step-by-step-diabetes-classification-knn-detailed?fbclid=IwAR36cCUBqicQlEJy_f8eKcNljb1GO1CKwIM5h0pEGa_ZozAgs7ySI6-Ol2k).    
 
-# Header 1
-## Header 2
-### Header 3
+![cross](https://scontent-hbe1-1.xx.fbcdn.net/v/t1.15752-9/74173849_470629050231734_1191953158075580416_n.png?_nc_cat=101&_nc_ohc=-H7DITJIJyYAQmrQiJ1wTiALhAA3qlCeP4FbEQXu3caEALooNKbYK5kUw&_nc_ht=scontent-hbe1-1.xx&oh=a005546569f41c5beb50ff99de9c2be1&oe=5E71C7F3)
+    
+    
+We used 2 methods: Linear Discriminant Analysis and K Nearest Neighbors, for prediction.  
+**Linear Discriminant & Logistic Regression**  
+[Source](https://newonlinecourses.science.psu.edu/onlinecourses/sites/stat508/files/lesson09/image_01.gif).  
 
-- Bulleted
-- List
+![LDA](https://newonlinecourses.science.psu.edu/onlinecourses/sites/stat508/files/lesson09/image_01.gif)  
+**K Nearest Neighbors**  
+[Source](https://www.researchgate.net/profile/Zainab_Sultani/publication/328146770/figure/fig3/AS:679495715536897@1539015811173/kNN-classification-example.ppm)    
+![Knn](https://www.researchgate.net/profile/Zainab_Sultani/publication/328146770/figure/fig3/AS:679495715536897@1539015811173/kNN-classification-example.ppm)  
+**Here are the results:** 
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/yara7/blog.git.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+ |               |  	Linear Discriminant Analysis | K Nearest Neighbors Classifier
+|------------ | ------------- |
+Accuracy      |	               0.7708     |          	0.77             |      
+Sensitivity  |  	0.5672  |     	0.92   |  
+Specificity  |  	0.88  |  	0.49  | 
+P-value(CI 95%) |  	0.0000339 |  	0.0005  |
